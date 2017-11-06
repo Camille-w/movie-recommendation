@@ -1,9 +1,14 @@
 <!doctype html>
+
 <title>Movie Recommendation</title>
 <div class=page>
+  <link rel="stylesheet"
+      href="/static/style.css">
   <h1>{{ page_title }}</h1>
   <Hello></Hello>
   <ul>
-    No item for now
+    {% for index, movie in my_movies_rated.iterrows() %}
+    <li>{{ movie.movieId }} - {{ movie.title }}</li>
+    {% endfor %}
   </ul>
 </div>
